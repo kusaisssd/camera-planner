@@ -23,7 +23,6 @@ const DeviceElement = ({
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [nameValue, setNameValue] = useState(device.name || "");
-  const [isHovering, setIsHovering] = useState(false);
 
   const pixelX = percentageToPixels(device.x, "x");
   const pixelY = percentageToPixels(device.y, "y");
@@ -131,8 +130,6 @@ const DeviceElement = ({
       <div
         className="device-point"
         data-device-id={device.id}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
         onClick={(e) => {
           e.stopPropagation();
           

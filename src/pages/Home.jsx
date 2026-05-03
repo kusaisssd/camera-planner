@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import EditionBanner from '../components/EditionBanner';
 
 const Home = ({ setCurrentPage }) => {
   const { colors } = useTheme();
@@ -109,6 +110,10 @@ const Home = ({ setCurrentPage }) => {
             كيف يعمل التطبيق
           </button>
         </div>
+      </section>
+
+      <section style={{ padding: '40px 20px' }}>
+        <EditionBanner />
       </section>
 
       <section style={{

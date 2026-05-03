@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 
 const ProjectNameDialog = ({ isOpen, onClose, currentName, onSave }) => {
-  const { colors, isDark } = useTheme();
+  const { colors } = useTheme();
   const [projectName, setProjectName] = useState(currentName);
 
   useEffect(() => {

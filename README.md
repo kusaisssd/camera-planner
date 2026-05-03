@@ -35,6 +35,22 @@ Security installers traditionally plan CCTV systems on paper or generic CAD tool
 - 🌙 **Dark mode** — fully themed
 - 🌐 **Arabic-first UI** with native RTL layout
 
+### 🆓 Free vs Full Edition
+
+| Capability | 🆓 Open Source (this repo) | ⭐ Full Edition (contact) |
+|---|:---:|:---:|
+| Floor-plan editor (image + PDF) | ✅ | ✅ |
+| Camera placement & coverage cones | ✅ | ✅ |
+| Cable routing & length calculation | ✅ | ✅ |
+| Save project as local JSON file | ✅ | ✅ |
+| Cloud database & user accounts | ❌ | ✅ |
+| Project archive & client sharing | ❌ | ✅ |
+| Polished PDF report export | ❌ | ✅ |
+| Admin dashboard & analytics | ❌ | ✅ |
+| Priority support & team training | ❌ | ✅ |
+
+> 📩 The full edition (with database, multi-user accounts, reporting, and dashboards) is available on request — contact [kosayalassaf@gmail.com](mailto:kosayalassaf@gmail.com) or via [pro-sss.com](https://pro-sss.com/).
+
 ### 🛠️ Tech Stack
 
 | Layer | Technology |
@@ -105,6 +121,22 @@ Contributions welcome! Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a 
 - 💾 **حفظ/فتح المشاريع** — تصدير JSON واستعادة العمل بالكامل
 - 🌙 **وضع داكن** متكامل
 - 🌐 **واجهة عربية** بدعم RTL أصيل
+
+### 🆓 النسخة المجانية مقابل النسخة الكاملة
+
+| الميزة | 🆓 مفتوحة المصدر (هذا المستودع) | ⭐ النسخة الكاملة (للتواصل) |
+|---|:---:|:---:|
+| محرر المخططات (صور + PDF) | ✅ | ✅ |
+| وضع الكاميرات وعرض التغطية | ✅ | ✅ |
+| رسم الكابلات وحساب الأطوال | ✅ | ✅ |
+| حفظ المشروع كملف JSON محلي | ✅ | ✅ |
+| قاعدة بيانات سحابية وحسابات مستخدمين | ❌ | ✅ |
+| أرشفة المشاريع ومشاركتها مع العملاء | ❌ | ✅ |
+| تصدير تقارير PDF احترافية | ❌ | ✅ |
+| لوحة تحكم وإحصائيات | ❌ | ✅ |
+| دعم فني أولوي وتدريب الفريق | ❌ | ✅ |
+
+> 📩 **النسخة الكاملة** (مع قاعدة البيانات، الحسابات متعددة المستخدمين، التقارير، ولوحات التحكم) متاحة عند الطلب — تواصل عبر [kosayalassaf@gmail.com](mailto:kosayalassaf@gmail.com) أو [pro-sss.com](https://pro-sss.com/).
 
 ### 🚀 البدء السريع
 

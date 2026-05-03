@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const Pricing = () => {
   const { colors, isDark } = useTheme();
-  const [billingCycle, setBillingCycle] = useState('monthly');
 
   const pricingPlans = [
     {

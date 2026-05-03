@@ -18,7 +18,6 @@ const PlanContainer = forwardRef((props, outerRef) => {
     setIsDragging,
     isRotating,
     setIsRotating,
-    hasInteracted,
     setHasInteracted,
     pixelsPerMeter,
     setPixelsPerMeter,
@@ -90,6 +89,7 @@ const PlanContainer = forwardRef((props, outerRef) => {
 
     resizeObserver.observe(container);
     return () => resizeObserver.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getEventPosition = (e) => {
@@ -304,6 +304,7 @@ const PlanContainer = forwardRef((props, outerRef) => {
       document.removeEventListener("touchmove", handleMove);
       document.removeEventListener("touchend", handleEnd);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDragging, isRotating, selectedId, cameras, devices]);
 
   return (
@@ -388,12 +389,6 @@ const PlanContainer = forwardRef((props, outerRef) => {
           >
             {cables.map((cable) => {
               if (!cable.points || cable.points.length < 2) return null;
-
-              const cableLength = getCableLength(cable);
-              const midIdx = Math.floor(cable.points.length / 2);
-              const midPoint = cable.points[midIdx];
-              const midX = percentageToPixels(midPoint.x, "x");
-              const midY = percentageToPixels(midPoint.y, "y");
 
               const cableColor = cable.color || '#2563eb';
 

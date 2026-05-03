@@ -13,7 +13,7 @@ import PDFPageSelector from "../components/PDFPageSelector";
 import { saveProject, loadProject, isValidProjectFile } from "../utils/ProjectManager";
 
 export default function MyPlans() {
-  const { colors, isDark } = useTheme();
+  const { colors } = useTheme();
   const [cameras, setCameras] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -38,7 +38,6 @@ export default function MyPlans() {
 
   const [devices, setDevices] = useState([]);
   const [showDeviceDialog, setShowDeviceDialog] = useState(false);
-  const [isAddingDevice, setIsAddingDevice] = useState(false);
 
   const [cableType, setCableType] = useState('camera');
   const [showChannelDialog, setShowChannelDialog] = useState(false);
@@ -80,6 +79,7 @@ export default function MyPlans() {
       console.log('✅ الصورة محملة - إعادة رسم الكابلات:', cables.length);
       setCables(prev => [...prev]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageLoaded]);
 
   useEffect(() => {
@@ -333,7 +333,6 @@ export default function MyPlans() {
     setDevices((prev) => [...prev, newDevice]);
     setSelectedId(newDevice.id);
     setShowDeviceDialog(false);
-    setIsAddingDevice(false);
   };
 
   const handleSelectChannel = (channelNumber) => {
@@ -548,7 +547,6 @@ export default function MyPlans() {
                           return;
                         }
                         setShowDeviceDialog(true);
-                        setIsAddingDevice(true);
                       }}
                       style={{
                         padding: "0.75rem 1rem",
@@ -906,10 +904,7 @@ export default function MyPlans() {
 
             <DeviceDialog
               isOpen={showDeviceDialog}
-              onClose={() => {
-                setShowDeviceDialog(false);
-                setIsAddingDevice(false);
-              }}
+              onClose={() => setShowDeviceDialog(false)}
               onAdd={handleAddDevice}
             />
 

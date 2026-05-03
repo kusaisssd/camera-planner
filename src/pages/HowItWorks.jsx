@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const HowItWorks = () => {
-  const [activeTab, setActiveTab] = useState('benefits');
   const { colors } = useTheme();
 
   const benefits = [
