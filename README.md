@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
 [![Made with Love](https://img.shields.io/badge/made%20with-❤-red?style=for-the-badge)](#)
-
+[![CI](https://github.com/kusaisssd/camera-planner/actions/workflows/ci.yml/badge.svg)](https://github.com/kusaisssd/camera-planner/actions/workflows/ci.yml)
 [**🚀 Live Demo**](https://camera-planner.vercel.app) · [**🐛 Report Bug**](https://github.com/kusaisssd/camera-planner/issues) · [**✨ Request Feature**](https://github.com/kusaisssd/camera-planner/issues)
 
 </div>
