@@ -1,0 +1,331 @@
+/* mobile-improvements.css - ضعه في src/ واستورده في index.js */
+
+/* منع التكبير المزدوج على iOS */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* تحسين اللمس للأزرار */
+button, 
+.camera-point,
+.rotate-handle {
+  touch-action: manipulation;
+}
+
+/* تحسينات للموبايل */
+@media (max-width: 768px) {
+  
+  /* أحجام معتدلة للكاميرا على الموبايل */
+  .camera-point {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 20px !important;
+  }
+  
+  .rotate-handle {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  /* تحسين مساحة الضغط للأزرار العادية فقط */
+  button:not(.camera-point):not([style*="backgroundColor: #dc2626"]) {
+    min-height: 44px;
+  }
+  
+  /* جعل النصوص أكبر قليلاً */
+  input[type="range"] {
+    height: 8px !important;
+  }
+  
+  /* تحسين القوائم المنسدلة */
+  select, input[type="text"], input[type="number"] {
+    font-size: 16px !important; /* منع التكبير التلقائي في iOS */
+  }
+}
+
+/* تحسينات لشاشات صغيرة جداً */
+@media (max-width: 480px) {
+  
+  /* تقليل الحواف */
+  .camera-controls {
+    padding: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  
+  /* تحسين الأزرار */
+  .camera-controls button {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* العلامة المائية أصغر */
+  .watermark-text {
+    font-size: 40px !important;
+  }
+}
+
+/* منع السكرول عند السحب */
+body.dragging {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* تحسين الـ Scroll للقوائم */
+@media (hover: none) and (pointer: coarse) {
+  /* للشاشات اللمسية فقط */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 139, 139, 0.5);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 139, 139, 0.8);
+  }
+}
+
+/* تحسين النماذج على الموبايل */
+input[type="text"],
+input[type="number"],
+textarea {
+  /* منع التكبير التلقائي في Safari iOS */
+  font-size: 16px;
+}
+
+/* تحسين الـ Modal على الموبايل */
+@media (max-width: 768px) {
+  [style*="position: absolute"][style*="transform: translate(-50%, -50%)"] {
+    width: 90vw !important;
+    min-width: auto !important;
+    max-width: 400px !important;
+  }
+}
+
+/* تحسين الأزرار العائمة */
+.floating-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .floating-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* منع التحديد غير المرغوب */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* تحسين الانيميشن على الموبايل */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* تحسين زر الحذف على الموبايل */
+@media (max-width: 768px) {
+  button[style*="backgroundColor: #dc2626"] {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 16px !important;
+  }
+  
+  /* تقليل حجم الخط في اسم الكاميرا */
+  div[style*="rgba(0, 0, 0, 0.85)"] {
+    font-size: 0.85rem !important;
+    padding: 0.35rem 0.6rem !important;
+  }
+}
+
+/* تحسين أسماء الكاميرات */
+@media (max-width: 768px) {
+  div[style*="rgba(0, 0, 0, 0.85)"][style*="cursor: pointer"] {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 1rem !important;
+    min-width: 80px !important;
+  }
+}
+
+/* تحسين Dialog المقياس */
+@media (max-width: 768px) {
+  div[style*="position: absolute"][style*="zIndex: 2000"] {
+    min-width: 90vw !important;
+    max-width: 350px !important;
+    padding: 1.5rem !important;
+  }
+}
+
+/* تحسين أزرار فتحة العدسة */
+@media (max-width: 768px) {
+  button[style*="f/"] {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.85rem !important;
+    min-width: 48px !important;
+  }
+}
+
+/* إخفاء Scrollbar على الموبايل عند عدم الحاجة */
+@media (max-width: 768px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 139, 139, 0.5) transparent;
+  }
+}
+
+/* تحسين القائمة الجانبية على الموبايل */
+@media (max-width: 768px) {
+  [style*="flex: 0 0 auto"] {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* منع overscroll على iOS */
+body {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* تحسين Performance على الموبايل */
+* {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* تحديد مناطق اللمس بوضوح */
+@media (hover: none) {
+  button:active,
+  .camera-point:active,
+  .rotate-handle:active {
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* تحسين الـ input للمقياس */
+@media (max-width: 768px) {
+  input[type="number"][style*="width: 100%"] {
+    padding: 0.75rem !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Safe Area للأجهزة الحديثة (iPhone X+) */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* تحسين Landscape Mode */
+@media (max-width: 768px) and (orientation: landscape) {
+  [style*="height: 70vh"] {
+    height: 85vh !important;
+  }
+  
+  [style*="paddingTop: 70px"] {
+    padding-top: 60px !important;
+  }
+}
+
+/* تحسين الضغط على الروابط */
+a {
+  -webkit-tap-highlight-color: rgba(0, 139, 139, 0.2);
+  tap-highlight-color: rgba(0, 139, 139, 0.2);
+}
+
+/* تحسين روابط قائمة الموبايل */
+@media (max-width: 768px) {
+  a[href*="pro-sss.com"],
+  a[href*="kosayalassaf"] {
+    -webkit-tap-highlight-color: rgba(0, 139, 139, 0.3);
+  }
+  
+  a[href*="pro-sss.com"]:active,
+  a[href*="kosayalassaf"]:active {
+    background-color: rgba(0, 139, 139, 0.1) !important;
+  }
+}
+
+/* Focus visible للـ Accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #008b8b;
+  outline-offset: 2px;
+}
+
+/* تحسين الـ SVG على الموبايل */
+@media (max-width: 768px) {
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Dark mode adjustments للموبايل */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  body {
+    background-color: #0f172a;
+  }
+}
+
+/* تحسين Font rendering على الموبايل */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========================================
+   Custom Camera Cursor للمخطط
+   ======================================== */
+
+/* المؤشر العادي - على شكل كاميرا */
+.plan-camera-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23008b8b" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 5V3h10v2"/></svg>') 12 12, crosshair !important;
+}
+
+/* عند السحب */
+.plan-dragging {
+  cursor: grabbing !important;
+}
+
+/* عند ضبط المقياس */
+.plan-crosshair {
+  cursor: crosshair !important;
+}
+
+/* Fallback للمتصفحات القديمة */
+@supports not (cursor: url('data:image/svg+xml')) {
+  .plan-camera-cursor {
+    cursor: crosshair !important;
+  }
+}
